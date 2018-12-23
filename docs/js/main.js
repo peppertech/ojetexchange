@@ -20,7 +20,7 @@ requirejs.config(
 //injector:mainReleasePaths
 
 {
-  "hellojs":"https://cdnjs.cloudflare.com/ajax/libs//hellojs/2.0.0-4",
+  "hellojs":"libs/hellojs/hello.all",
   "knockout":"https://static.oracle.com/cdn/jet/v6.0.0/3rdparty/knockout/knockout-3.4.2.debug",
   "jquery":"https://static.oracle.com/cdn/jet/v6.0.0/3rdparty/jquery/jquery-3.3.1",
   "jqueryui-amd":"https://static.oracle.com/cdn/jet/v6.0.0/3rdparty/jquery/jqueryui-amd-1.12.1",

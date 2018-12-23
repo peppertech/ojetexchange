@@ -11,17 +11,14 @@
   "libs": {
 
     "hellojs": {
-      "cdn": "cdnjs",
       "cwd": "node_modules/hellojs/dist",
       "debug": {
         "src": "hello.all.js",
-        "path": "libs/hellojs/hello.all.js",
-        "cdnPath": "hellojs/2.0.0-4"
+        "path": "libs/hellojs/hello.all.js"
       },
       "release": {
         "src": "hello.all.min.js",
-        "path": "libs/hellojs/hello.all.min.js",
-        "cdnPath": "hellojs/2.0.0-4"
+        "path": "libs/hellojs/hello.all.min.js"
       }
     },
 
