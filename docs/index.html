@@ -64,7 +64,8 @@
          ** the header hamburger icon.
       -->
       <div id="navDrawer" role="navigation" class="oj-contrast-marker oj-web-applayout-offcanvas oj-offcanvas-start">
-        <oj-navigation-list data="[[navDataSource]]"
+        <oj-navigation-list id="nav1"
+                            data="[[navDataSource]]"
                             edge="start"
                             item.renderer="[[oj.KnockoutTemplateUtils.getRenderer('navTemplate', true)]]"
                             on-click="[[toggleDrawer]]"
@@ -129,7 +130,8 @@
             </div>
           </div>
           <div role="navigation" class="oj-web-applayout-max-width oj-web-applayout-navbar">
-            <oj-navigation-list class="oj-sm-only-hide oj-md-condense oj-md-justify-content-center"
+            <oj-navigation-list id="nav2"
+                                class="oj-sm-only-hide oj-md-condense oj-md-justify-content-center"
                                 data="[[navDataSource]]"
                                 edge="top"
                                 item.renderer="[[oj.KnockoutTemplateUtils.getRenderer('navTemplate', true)]]"
