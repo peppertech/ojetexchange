@@ -66,7 +66,7 @@ define(
 
       self.logOut = function () {
         hello(self.authService()).logout();
-        self.router.go('home');
+        self.router.go('components');
         self.authenticated(false);
         self.userName('Guest');
         self.avatar('css/images/avatar_24px.png');
