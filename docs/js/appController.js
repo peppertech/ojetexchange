@@ -72,8 +72,12 @@ define(
         self.avatar('css/images/avatar_24px.png');
         localStorage.removeItem('hello');
         document.getElementById('menu1').refresh();
-        document.getElementById('nav1').refresh();
-        document.getElementById('nav2').refresh();
+        if (document.getElementById('nav1')) {
+          document.getElementById('nav1').refresh();
+        }
+        if (document.getElementById('nav2')) {
+          document.getElementById('nav2').refresh();
+        }
         console.log('Logged Out of ' + self.authService());
       };
 
