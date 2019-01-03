@@ -7,13 +7,15 @@
 */
 
 .exchange-logo {
-    top: 10px;
+    /* top: 10px;
     left: 10px;
-    position: relative;
+    position: relative; */
+    padding-top: 5px;
 }
 
 .exchange-logo:before {
-    content: url("images/exchange-logo-150x100.png");
+    /* content: url("images/exchange-logo-75x50.png"); */
+    content: url("images/logo.svg");
 }
 
 html:not([dir="rtl"]) .exchange-logo {
@@ -29,19 +31,32 @@ html[dir="rtl"] .exchange-logo {
 }
 
 .oj-web-applayout-header-title {
-    font-size: 3.14286rem;
+    /* font-size: 3.14286rem; */
+    font-size: 24px;
     font-weight: normal;
     color: rgba(0, 0, 0, 0.7);
-    font-weight: normal;
+    font-weight: bolder;
     line-height: 0;
-    padding-left: 75px;
+    padding-left: 15px;
     position: absolute;
     left: 100px;
     top: 25px;
 }
 
+.oj-web-applayout-header-desc {
+    font-size: 14px;
+    font-weight: normal;
+    color: rgba(0, 0, 0, 0.7);
+    font-weight: normal;
+    line-height: 0;
+    padding-left: 15px;
+    position: absolute;
+    left: 100px;
+    top: 40px;
+}
+
 .toolbar-alignment {
-    margin-top: -50px;
+    /* margin-top: -50px; */
 }
 
 /**
@@ -50,7 +65,8 @@ html[dir="rtl"] .exchange-logo {
 
 @media screen and (max-width: 767px) {
     .exchange-logo:before {
-        content: url("images/exchange-logo-75x50.png");
+        /* content: url("images/exchange-logo-75x50.png"); */
+        content: url("images/logo.svg");
     }
     .exchange-logo {
         top: 2px;

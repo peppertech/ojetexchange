@@ -40,10 +40,27 @@ define(
             case 'out':
               self.logOut();
               break;
+            case 'about':
+              self.router.go('about');
+              break;
+            case 'settings':
+              handleSettings();
+              break;
+            case 'help':
+              handleHelp();
+              break;
             default:
               console.log("Default hit. This shouldn't happen");
           }
         }
+      };
+
+      handleSettings = () => {
+        localStorage.setItem('profile', { test: 'This is a test' });
+      };
+
+      handleHelp = () => {
+        localStorage.removeItem('profile');
       };
 
       // Authentication
@@ -55,7 +72,7 @@ define(
       self.logIn = function (network) {
         hello.init({
           github: '238e9d094d09848c7976'
-        }, { redirect_uri: 'https://peppertech.github.io/ojetexchange/' });
+        }, { redirect_uri: 'https://ojetexchange.firebaseapp.com/' });
         self.authService(network);
         hello(network).login().then(function () {
           console.log('You are logged in using ' + self.authService());
@@ -71,6 +88,7 @@ define(
         self.userName('Guest');
         self.avatar('css/images/avatar_24px.png');
         localStorage.removeItem('hello');
+        localStorage.removeItem('profile');
         document.getElementById('menu1').refresh();
         if (document.getElementById('nav1')) {
           document.getElementById('nav1').refresh();
@@ -86,11 +104,8 @@ define(
         hello(auth.network).api('me').then(function (r) {
           self.authenticated(true);
           self.userName(r.name);
-          if (auth.network === 'google') {
-            self.avatar(r.thumbnail);
-          } else {
-            self.avatar(r.avatar_url);
-          }
+          localStorage.setItem('profile', JSON.stringify(r));
+          self.avatar(r.avatar_url);
           document.getElementById('menu1').refresh();
           document.getElementById('nav1').refresh();
           document.getElementById('nav2').refresh();
@@ -181,10 +196,22 @@ define(
 
       // Header
       // Application Name used in Branding Area
-      self.appName = ko.observable('Community Exchange');
+      self.appName = ko.observable('JET Open Source');
+      self.appDesc = ko.observable('TECH EXCHANGE');
       // User Info used in Global Navigation area
       self.userLogin = ko.observable(self.userName);
 
+      self.searchHandler = () => {
+
+      }
+
+      self.transHandler = () => {
+
+      }
+
+      self.noticesHandler = () => {
+
+      }
       // Footer
       function footerLink(name, id, linkTarget) {
         this.name = name;

@@ -11,6 +11,22 @@ define(
   function (oj, ko) {
     function ProfileViewModel() {
       var self = this;
+      let profileData = {};
+
+      updateProfile = () => {
+        let data = JSON.parse(localStorage.getItem('profile'));
+        if (data) {
+          profileData = data;
+          console.log('data: '+ data)
+        }
+        else {
+          console.log('No Data yet');
+        }
+      }
+
+      if (localStorage.profile !== '{}' && localStorage.profile !== undefined) {
+        updateProfile();
+      }
 
       // Below are a set of the ViewModel methods invoked by the oj-module component.
       // Please reference the oj-module jsDoc for additional information.
